@@ -9,7 +9,9 @@ def obter_marcas():
         print("Não existem marcas cadastradas.")
     else:
         for marca in marcas:
-            print(f"ID: {marca['id']}, Nome: {marca['nome']}")
+            id_marca = marca[0]
+            nome = marca[1]
+            print(f"ID: {id_marca}, Nome: {nome}")
         print()
 
 
@@ -21,8 +23,11 @@ def obter_modelos_por_marca(id_marca):
         print(f"Não existem modelos cadastrados para a marca com ID {id_marca}.")
     else:
         for modelo in modelos:
-            print(f"ID: {modelo['id']}, Nome: {modelo['nome']}")
+            id_modelo = modelo[0]
+            nome_modelo = modelo[1]
+            print(f"ID: {id_modelo}, Nome: {nome_modelo}")
         print()
+
 
 
 def obter_carros():
@@ -36,7 +41,11 @@ def obter_carros():
         print("Não existem carros cadastrados.")
     else:
         for carro in carros:
-            print(f"ID: {carro['id']}, Nome: {carro['nome']}, Marca: {carro['marca']}, Modelo: {carro['modelo']}")
+            id_carro = carro[0]
+            nome_carro = carro[1]
+            marca = carro[7]
+            modelo = carro[6]
+            print(f"ID: {id_carro}, Nome: {nome_carro}, Marca: {marca}, Modelo: {modelo}")
         print()
 
 
@@ -51,14 +60,22 @@ def obter_carro_por_id(id_carro):
     if not carro:
         print(f"Não existe um carro cadastrado com o ID {id_carro}.")
     else:
+        id_carro = carro[0]
+        nome_carro = carro[1]
+        renavam = carro[2]
+        placa = carro[3]
+        valor = carro[4]
+        ano = carro[5]
+        marca = carro[7]
+        modelo = carro[6]
         print(f"Informações do carro com ID {id_carro}:")
-        print(f"Nome: {carro['nome']}")
-        print(f"Renavam: {carro['renavam']}")
-        print(f"Placa: {carro['placa']}")
-        print(f"Valor: {carro['valor']}")
-        print(f"Ano: {carro['ano']}")
-        print(f"Marca: {carro['marca']}")
-        print(f"Modelo: {carro['modelo']}")
+        print(f"Nome: {nome_carro}")
+        print(f"Renavam: {renavam}")
+        print(f"Placa: {placa}")
+        print(f"Valor: {valor}")
+        print(f"Ano: {ano}")
+        print(f"Marca: {marca}")
+        print(f"Modelo: {modelo}")
         print()
 
 
@@ -73,13 +90,14 @@ def obter_modelos_e_carros_por_marca(id_marca):
         print(f"Não existem modelos e carros cadastrados para a marca com ID {id_marca}.")
     else:
         for mc in modelos_carros:
-            modelo = mc['modelo']
-            carro = mc['carro']
-            renavam = mc['renavam']
-            placa = mc['placa']
-            valor = mc['valor']
-            ano = mc['ano']
-            id_carro = mc['id_carro']
+            id_modelo = mc[0]
+            modelo = mc[1]
+            id_carro = mc[2]
+            carro = mc[3]
+            renavam = mc[4]
+            placa = mc[5]
+            valor = mc[6]
+            ano = mc[7]
 
             print(f"Modelo: {modelo}")
             if carro:
@@ -87,4 +105,3 @@ def obter_modelos_e_carros_por_marca(id_marca):
             else:
                 print("Nenhum carro cadastrado para este modelo.")
             print()
-
