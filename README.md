@@ -1,5 +1,13 @@
 # Car-System
 
-## How to run
+Alunos Eduardo Savian de Oliveira e João Pedro Vicenzi Da Silveira 
 
-Execute o arquivo main.py
+## How to run on Unix-like
+
+```bash
+cd src/
+```
+
+```bash
+python main.py
+```
